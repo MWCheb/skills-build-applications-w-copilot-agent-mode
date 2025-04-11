@@ -26,7 +26,6 @@ class TeamSerializer(serializers.ModelSerializer):
 
 class ActivitySerializer(serializers.ModelSerializer):
     _id = ObjectIdField()
-    user = ObjectIdField()
 
     class Meta:
         model = Activity
@@ -34,7 +33,6 @@ class ActivitySerializer(serializers.ModelSerializer):
 
 class LeaderboardSerializer(serializers.ModelSerializer):
     _id = ObjectIdField()
-    user = UserSerializer()
 
     class Meta:
         model = Leaderboard
