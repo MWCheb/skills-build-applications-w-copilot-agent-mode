@@ -1,19 +1,8 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 from .models import User, Team, Activity, Leaderboard, Workout
-
-@api_view(['GET'])
-def api_root(request, format=None):
-    base_url = 'https://literate-adventure-g4667gwwjrq52ppq9-8000.app.github.dev/' if request.get_host() == 'literate-adventure-g4667gwwjrq52ppq9-8000.app.github.dev' else 'http://localhost:8000/'
-    return Response({
-        'users': base_url + 'api/users/?format=api',
-        'teams': base_url + 'api/teams/?format=api',
-        'activities': base_url + 'api/activities/?format=api',
-        'leaderboard': base_url + 'api/leaderboard/?format=api',
-        'workouts': base_url + 'api/workouts/?format=api'
-    })
+from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -34,3 +23,13 @@ class LeaderboardViewSet(viewsets.ModelViewSet):
 class WorkoutViewSet(viewsets.ModelViewSet):
     queryset = Workout.objects.all()
     serializer_class = WorkoutSerializer
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'users': 'users/',
+        'teams': 'teams/',
+        'activities': 'activities/',
+        'leaderboard': 'leaderboard/',
+        'workouts': 'workouts/',
+    })
