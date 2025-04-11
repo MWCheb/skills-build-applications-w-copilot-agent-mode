@@ -10,7 +10,7 @@ class User(models.Model):
 
 class Team(models.Model):
     name = models.CharField(max_length=100)
-    members = models.ArrayField(model_container=User)
+    members = models.ManyToManyField(User)  # Changed from ArrayField to ManyToManyField
 
     def __str__(self):
         return self.name

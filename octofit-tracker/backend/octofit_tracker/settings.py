@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'octofit_tracker',  # Dodanie aplikacji octofit_tracker
+    'rest_framework',  # <--- DODAJ TĘ LINIĘ, jeśli jej nie ma
+    'corsheaders',     # CORS jest już prawdopodobnie dodany
 ]
 
 MIDDLEWARE = [
