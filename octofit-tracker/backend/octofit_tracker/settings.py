@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'octofit_db',
-        # 'HOST': 'localhost',
-        # 'PORT': 27017,  # Default MongoDB port
+        'HOST': 'localhost',
+        'PORT': 27017,  # Default MongoDB port
     }
 }
 
@@ -93,10 +93,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
-INSTALLED_APPS += [
-    'corsheaders',
-]
-
 MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
 
 CORS_ALLOW_ALL_ORIGINS = True
