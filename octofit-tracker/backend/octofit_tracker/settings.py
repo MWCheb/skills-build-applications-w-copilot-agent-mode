@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tracker',  # Add the tracker app
     'octofit_tracker',  # Dodanie aplikacji octofit_tracker
 ]
 
